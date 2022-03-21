@@ -6,12 +6,13 @@ from ela.utils import ELA
 from PIL import Image 
 import base64
 from io import BytesIO
+import re
 
 def index(request):
     if request.method == 'POST' and request.FILES['upload']:
         upload = request.FILES['upload']
         fss = FileSystemStorage()
-        file = fss.save(upload.name, upload)
+        file = fss.save(upload.name.replace(' ','-'), upload)
         file_url = fss.url(file)
         print(file_url)
         image = ELA(file_url,90)

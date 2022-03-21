@@ -6,4 +6,5 @@ from .views import *
 
 urlpatterns = [
     path('image/' , index , name="index" ),
+    path('',index,name="index"),
 ]
