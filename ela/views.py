@@ -1,5 +1,7 @@
 from django.shortcuts import render
 from django.core.files.storage import FileSystemStorage
+
+from ela.utils import ELA
 # Create your views here.
 def index(request):
     if request.method == 'POST' and request.FILES['upload']:
@@ -8,6 +10,7 @@ def index(request):
         file = fss.save(upload.name, upload)
         file_url = fss.url(file)
         print(file_url)
+        ELA(file_url)
         return render(request, 'index.html', {'file_url': file_url})
     return render(request, 'index.html')
 

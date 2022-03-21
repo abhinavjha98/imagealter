@@ -50,7 +50,7 @@
       <div class="container">
 
         <!--Simple Form-->
-        <h2 class="my-4">Add a new movie script</h2>
+        <h2 class="my-4">Add image</h2>
         <form method="post" action="" enctype="multipart/form-data">
           {% csrf_token %}
               <input type="file" name="upload" accept=".jpeg, .jpg, .png, .tiff">
@@ -59,18 +59,25 @@
         </form>
 
         <!--See File Uploaded-->
-        <h2 class="my-4">Movie Script</h2>
+        
         <div class="row">
           {% if file_url %}
-          <div class="col-lg-4 col-md-6 col-sm-12 pb-4">
-            <!-- <p>Uploaded to:<a href="{{ file_url }}">{{ file_url }}</a></p> -->
+          <div class="col-lg-4 col-md-5 col-sm-12 pb-4">
+            <h2 class="my-4">Normal Image</h2>
             <img src ="{{file_url}}">
-            <a class="btn btn-dark my-4" href="/">Return to Homepage</a>
-          {% else %}
-          <p>No movies scripts added.</p>
-          {% endif %}
+            <!-- <a class="btn btn-dark my-4" href="/">Return to Homepage</a> -->
+          
         </div>
-
+        <div class="col-lg-4 col-md-2 col-sm-12 pb-4">
+          </div>
+        <div class="col-lg-4 col-md-5 col-sm-12 pb-4">
+          <h2 class="my-4">ELA Image</h2>
+            <img src ="{{file_url}}">
+            <!-- <a class="btn btn-dark my-4" href="/">Return to Homepage</a> -->
+          </div>
+          {% else %}
+          <p>No images added.</p>
+          {% endif %}
       </div>
 
     <!-- Optional JavaScript; choose one of the two! -->
