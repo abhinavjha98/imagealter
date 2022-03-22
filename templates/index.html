@@ -47,11 +47,11 @@
           </div> -->
         </div>
       </nav>
-      <div class="container">
+      <div class="">
 
         <!--Simple Form-->
-        <h2 class="my-4">Add image</h2>
-        <form method="post" action="" enctype="multipart/form-data">
+        <h2 class="my-4" style="margin: 100px;">Add image</h2>
+        <form method="post" action="" enctype="multipart/form-data" style="margin-left: 100px;">
           {% csrf_token %}
               <input type="file" name="upload" accept=".jpeg, .jpg, .png, .tiff">
               <br>
@@ -60,18 +60,18 @@
 
         <!--See File Uploaded-->
         
-        <div class="row">
+        <div class="row" style="margin-left: 100px;">
           {% if file_url %}
           <div class="col-lg-5 col-md-5 col-sm-12 pb-4">
             <h2 class="my-4">Normal Image</h2>
-            <img src ="{{file_url}}" width="500px">
+            <img src ="{{file_url}}" width="700px">
             <!-- <a class="btn btn-dark my-4" href="/">Return to Homepage</a> -->
           
         </div>
         
         <div class="col-lg-5 col-md-5 col-sm-12 pb-4">
           <h2 class="my-4">Photoshopped Image</h2>
-            <img src ="{{img_file}}" width="500px">
+            <img src ="{{img_file}}" width="700px">
             <!-- <a class="btn btn-dark my-4" href="/">Return to Homepage</a> -->
           </div>
           {% else %}
